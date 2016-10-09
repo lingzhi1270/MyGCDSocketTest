@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ServerViewController">
+            <connections>
+                <outlet property="portTF" destination="uBf-1q-N8B" id="m3E-sK-t70"/>
+                <outlet property="sendMessageTF" destination="K53-I9-pbp" id="GPW-su-Nhd"/>
+                <outlet property="showMessageTextView" destination="P03-Yb-0TM" id="dgh-Bz-ZNE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="端口：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nka-Yi-kLt">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="Nph-c0-10A"/>
+                        <constraint firstAttribute="width" constant="64" id="yye-BS-9U2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入端口" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uBf-1q-N8B">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="132" id="YmY-bN-huU"/>
+                        <constraint firstAttribute="height" constant="30" id="wkI-p5-Bdg"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDv-GZ-plS">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="JSc-7s-ouf"/>
+                        <constraint firstAttribute="width" constant="79" id="N8b-Ok-iYM"/>
+                    </constraints>
+                    <state key="normal" title="开始监听"/>
+                    <connections>
+                        <action selector="startNotification:" destination="-1" eventType="touchUpInside" id="KCB-CS-dcb"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUA-Hv-Qpb">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="0Hv-YI-zAN"/>
+                        <constraint firstAttribute="width" constant="73" id="lhs-zF-Shx"/>
+                    </constraints>
+                    <state key="normal" title="接收消息"/>
+                    <connections>
+                        <action selector="recieveMessageAction:" destination="-1" eventType="touchUpInside" id="loR-mH-9v5"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P03-Yb-0TM">
+                    <color key="backgroundColor" red="1" green="0.5666594452" blue="0.50782554580000006" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="205" id="HHD-2B-H8d"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="发送内容" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K53-I9-pbp">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="138" id="0Fe-rn-LKU"/>
+                        <constraint firstAttribute="height" constant="30" id="cBZ-iI-2rc"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGB-zo-zOb">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="66" id="6xh-5M-mez"/>
+                        <constraint firstAttribute="height" constant="30" id="Hph-Tf-sod"/>
+                    </constraints>
+                    <state key="normal" title="发送消息"/>
+                    <connections>
+                        <action selector="sendMessage:" destination="-1" eventType="touchUpInside" id="0cF-Wp-T1c"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="P03-Yb-0TM" secondAttribute="trailing" constant="16" id="2N3-t2-JfK"/>
+                <constraint firstAttribute="trailing" secondItem="gGB-zo-zOb" secondAttribute="trailing" constant="24" id="BFn-5e-jEe"/>
+                <constraint firstItem="gGB-zo-zOb" firstAttribute="leading" secondItem="K53-I9-pbp" secondAttribute="trailing" constant="46" id="BQQ-Eh-gKP"/>
+                <constraint firstItem="uBf-1q-N8B" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="106" id="GDV-Qg-eRB"/>
+                <constraint firstItem="nDv-GZ-plS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="105" id="IMZ-Je-kZG"/>
+                <constraint firstItem="gGB-zo-zOb" firstAttribute="top" secondItem="nDv-GZ-plS" secondAttribute="bottom" constant="39" id="IsY-l0-8YF"/>
+                <constraint firstItem="uBf-1q-N8B" firstAttribute="leading" secondItem="nka-Yi-kLt" secondAttribute="trailing" constant="18" id="MqG-vg-26p"/>
+                <constraint firstItem="EUA-Hv-Qpb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="UiZ-T4-D5w"/>
+                <constraint firstItem="EUA-Hv-Qpb" firstAttribute="top" secondItem="nka-Yi-kLt" secondAttribute="bottom" constant="90" id="UtT-WN-JlJ"/>
+                <constraint firstItem="P03-Yb-0TM" firstAttribute="top" secondItem="EUA-Hv-Qpb" secondAttribute="bottom" constant="32" id="cq1-8g-y1S"/>
+                <constraint firstItem="nka-Yi-kLt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="drr-vx-m2l"/>
+                <constraint firstAttribute="trailing" secondItem="nDv-GZ-plS" secondAttribute="trailing" constant="23" id="fqD-9Y-xQt"/>
+                <constraint firstItem="P03-Yb-0TM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="jqL-0g-9eo"/>
+                <constraint firstItem="K53-I9-pbp" firstAttribute="top" secondItem="uBf-1q-N8B" secondAttribute="bottom" constant="38" id="keL-nc-zrP"/>
+                <constraint firstItem="nka-Yi-kLt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="103" id="qwP-bE-Wjd"/>
+            </constraints>
+            <point key="canvasLocation" x="26.5" y="52.5"/>
+        </view>
+    </objects>
+</document>
